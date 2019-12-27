@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Soli from '@/views/soli'
 import Crossborder from '@/views/soli/crossborder'
-
+import Egister from '@/views/egister'
 import Women from '@/views/soli/women'
 import Men from '@/views/soli/men'
 import Cosmetics from '@/views/soli/cosmetics'
@@ -10,6 +10,9 @@ import Lifestyle from '@/views/soli/lifestyle'
 import index from '@/views/index'
 import kids from '@/views/soli/kids'
 import Detail1 from '@/views/soli/detail'
+import Login from '@/views/login'
+import LoginTwo from '@/views/logintwo'
+import Pages from '@/views/soli/Pages'
 
 Vue.use(VueRouter) // 注册路由插件
 
@@ -49,6 +52,10 @@ const routes = [
         name: 'kids',
         component: kids
 
+      },
+      {
+        path: 'Pages',
+        component: Pages
       }
     ]
   },
@@ -59,9 +66,24 @@ const routes = [
     name: 'MyDetail' // 命名路由
   },
   {
+    path: '/login',
+    component: Login
+
+  },
+  {
+    path: '/logintwo',
+    component: LoginTwo
+
+  },
+  {
     path: '/index',
     component: index
 
+  },
+  {
+    path: '/egister',
+    name: 'egister',
+    component: Egister
   },
 
   {

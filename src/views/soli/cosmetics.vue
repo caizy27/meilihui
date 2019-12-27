@@ -11,13 +11,13 @@
       </div>
     </div>
     <child :list="list"></child>
-    <foot></foot>
+
   </div>
 </template>
 <script>
 import Axios from 'axios'
 import child from './child'
-import foot from './foot'
+
 export default {
   data () {
     return {
@@ -34,13 +34,14 @@ export default {
     })
   },
   components: {
-    child, foot
+    child
   }
 }
 </script>
 <style lang="scss" scoped>
 .all{
   position: relative;
+   margin-top: 0.2rem;
 }
 img {
   width: 100%;

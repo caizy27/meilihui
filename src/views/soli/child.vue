@@ -2,7 +2,7 @@
   <div>
     <ul
       v-infinite-scroll="myLoadMore"
-      infinite-scroll-distance="500"
+      infinite-scroll-distance="100"
       infinite-scroll-disabled="loading"
       infinite-scroll-immediate-check="false"
     >

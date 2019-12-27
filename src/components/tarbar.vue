@@ -1,16 +1,17 @@
 <template>
-<div class="all" ref="tarbar" :class="isFiexd?'fixed':' '" >
+<div class="all" >
 
-<div class="demo-input-suffix">
-  <a><span>登录</span></a>
-<el-input
+<div class="demo-input-suffix" >
+  <a @click="pagesClick"><span>登录</span></a>
+  <el-input
     placeholder=""
     prefix-icon="el-icon-search"
     v-model="input2"
     type='text'
-    @input="inputClick()">
+    @input="inputClick()"
+>
 </el-input>
-<i class="iconfont icon-cart"></i>
+<i class="iconfont icon-gouwuche" @click="carhandClick"></i>
   <div class="input">
     <ul class="search">
       <li v-for="(data,index) in inputlist" :key="index" class="search_li">
@@ -33,12 +34,10 @@
 import axios from 'axios'
 
 export default {
-  props: [
-    'isfiexd'
-  ],
+
   data () {
     return {
-      isFiexd: false,
+      // isFiexd: false,
       input2: '',
       inputlist: [],
       datalist: [],
@@ -47,13 +46,19 @@ export default {
   },
   methods: {
     handClick (id, ind) {
-      // console.log(ind)
+      console.log(ind)
       var aa = this.urlList[ind]
       this.$router.push(`/soli/${aa}`)
     },
+    pagesClick () {
+      this.$router.push(`login`)
+    },
     handindexClick () {
-      // console.log('1111')
+      console.log('1111')
       this.$router.push(`/index`)
+    },
+    carhandClick () {
+      this.$router.push(`/egister`)
     },
 
     inputClick () {
@@ -65,16 +70,16 @@ export default {
         this.inputlist = res.data.result.map(item => item.name).filter(item => item.includes(this.input2))
         // console.log(this.inputlist)
       })
-    },
-    handleScroll () {
-      if (this.$refs.tarbar.clientHeight >= document.documentElement.scrollTop) {
-        // console.log(1)
-        this.isFiexd = false
-      } else {
-        // console.log(2)
-        this.isFiexd = true
-      }
     }
+    // handleScroll () {
+    //   if (this.$refs.tarbar.clientHeight >= document.documentElement.scrollTop) {
+    //      console.log(1)
+    //     this.isFiexd = false
+    //   } else {
+    //      console.log(2)
+    //     this.isFiexd = true
+    //   }
+    // }
 
   },
   mounted () {
@@ -82,17 +87,27 @@ export default {
       // console.log(res.data)
       this.datalist = res.data.lists
     })
-    window.onscroll = this.handleScroll
+    // window.onscroll = this.handleScroll
   }
 
 }
 
 </script>
 <style lang="scss" scoped>
+ input.el-input__inner{
+      background: transparent;
+      width: 3rem;
+
+  }
   .demo-input-suffix {
-    font-size: 0.14rem;
+    a{
+      display: block;
+      width: 0.5rem;
+          }
     display: flex;
-    input{
+   .el-input__inner{
+    background: transparent;
+
       flex: 1;
     }span{
       flex: 1;
@@ -106,31 +121,35 @@ export default {
       margin-left: 0.25rem;
     }
   }
+
   .all{
     background: #7e593c;
-    position: relative;
+
     height: 0.6rem;
-    width: 100%;
+    // width: 100%;
 
   }
   ul{
-    font-size: 0.14rem;
     display: flex;
     list-style: none;
+    background: #7e593c;
     li{
       flex: 1;
       color: #fff;
+      height: 0.4rem;
+      text-align: center;
+      line-height: 0.4rem;
     }
   }
-  .fixed{
-    position: fixed;
-    top:0px;
-    left:0px;
-    background:black;
-    height: 0.8rem;
-    // line-height: 40px;
-    width:100%;
-  }
+  // .fixed{
+  //   position: fixed;
+  //   top:0px;
+  //   left:0px;
+  //   background:black;
+  //   height: 0.8rem;
+  //   // line-height: 40px;
+  //   width:100%;
+  // }
   //  .input{
   //  position: absolute;
   //   top:0.58rem;

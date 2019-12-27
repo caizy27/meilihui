@@ -1,12 +1,14 @@
 <template>
     <div>
-    <swiper>
+
+    <swiper >
       <div class="swiper-slide" v-for="data in $store.state.looplist" :key="data.id">
         <img :src="data.main_image" />
       </div>
     </swiper>
+    <exercise></exercise>
     <child ></child>
-    <foot></foot>
+
     </div>
 
 </template>
@@ -14,7 +16,8 @@
 <script>
 import swiper from '@/components/swiper'
 import child from '@/views/soli/child1'
-import foot from '@/views/soli/foot'
+import exercise from '@/views/soli/exercise'
+
 import 'swiper/css/swiper.min.css' // swiper css
 export default {
   data () {
@@ -23,13 +26,14 @@ export default {
     }
   },
   mounted () {
-    // console.log(this.$store, '202121')
+    console.log(this.$store, '202121')
     this.$store.dispatch('getSwiperData')
   },
   components: {
     swiper,
     child,
-    foot
+    exercise
+
   }
 }
 </script>
@@ -37,7 +41,7 @@ export default {
 <style lang="scss" scoped>
 
 .swiper-slide {
-
+  margin-top: 0.19rem;
     img {
     width: 100%;
     height: 100%;

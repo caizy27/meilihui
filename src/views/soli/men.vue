@@ -2,12 +2,12 @@
   <div>
     <img src="https://img.alicdn.com/tfs/TB1WQ91o4z1gK0jSZSgXXavwpXa-750-900.jpg">
       <child :list="list"></child>
-      <foot></foot>
+
   </div>
 </template>
 <script>
 import child from './child'
-import foot from './foot'
+
 export default {
   data () {
     return {
@@ -16,13 +16,14 @@ export default {
     }
   },
   components: {
-    child, foot
+    child
   }
 }
 </script>
 <style lang="scss" scoped>
 img {
   width: 100%;
+   margin-top: 0.2rem;
 }
 strong {
   color: #fff;
