@@ -13,6 +13,7 @@ import Detail1 from '@/views/soli/detail'
 import Login from '@/views/login'
 import LoginTwo from '@/views/logintwo'
 import Pages from '@/views/soli/Pages'
+import Search from '@/views/soli/search'
 
 Vue.use(VueRouter) // 注册路由插件
 
@@ -55,7 +56,13 @@ const routes = [
       },
       {
         path: 'Pages',
+        name: 'Pages',
         component: Pages
+      },
+      {
+        path: 'search',
+        name: 'search',
+        component: Search
       }
     ]
   },

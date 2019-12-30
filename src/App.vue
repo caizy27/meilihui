@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tabber v-if="$store.state.topisShow"></tabber>
+    <!-- <tabber v-if="$store.state.topisShow" class="tarbar1"></tabber> -->
     <tabber v-if="$store.state.topisShow"   v-show="isFiexd" ref="tarbar" class="fixed" ></tabber>
 
      <router-view></router-view>
@@ -15,18 +15,21 @@ import foot from '@/views/soli/foot'
 export default {
   data () {
     return {
-      isFiexd: false
+      isFiexd: true
     }
   },
   methods: {
     handleScroll () {
       if (this.$refs.tarbar.$el.offsetHeight + 100 <= (document.documentElement.scrollTop || document.body.scrollTop)) {
-        // console.log(this.isFiexd, this.$refs.tarbar.$el.offsetHeight, document.documentElement.scrollTop, 1)
-
+        this.$refs.tarbar.$refs.qq.style.background = '#5b5b5b'
+        this.$refs.tarbar.$refs.ww.style.background = '#5b5b5b'
         this.isFiexd = true
       } else {
         // console.log(this.isFiexd, this.$refs.tarbar.$el.offsetHeight, document.documentElement.scrollTop, 2)
-        this.isFiexd = false
+        // this.isFiexd = false
+        // this.$refs.tarbar.$el.style.background=""
+        this.$refs.tarbar.$refs.qq.style.background = ''
+        this.$refs.tarbar.$refs.ww.style.background = ''
       }
     }
   },
@@ -54,9 +57,10 @@ a{
 .fixed{
     position: fixed !important;
     z-index:10;
+    width: 100%;
     top:0;
     left:0;
-    background: #7e593c;
+    background:transparent;
   }
 
 </style>

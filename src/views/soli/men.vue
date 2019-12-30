@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 img {
   width: 100%;
-   margin-top: 0.2rem;
+
 }
 strong {
   color: #fff;

@@ -69,75 +69,75 @@ export default {
   width: 100%;
 }
 .chengzai {
-  height: 266px;
-  widows: 375px;
-  margin-top: 80px;
+  height: 2.66rem;
+  widows: 3.75rem;
+  margin-top: 0.8rem;
 }
 a {
-  height: 60px;
-  width: 60px;
-  font-size: 40px;
+  height:0.6rem;
+  width: 0.6rem;
+  font-size: 0.4rem;
   text-align: center;
-  height: 60px;
+  height: 0.6rem;
   display: block;
   float: right;
   text-decoration: none;
   position: absolute;
   right: 0;
-  top: -80px;
+  top: -0.8rem;
 }
 input {
-  height: 50px;
-  width: 200px;
+  height: 0.5rem;
+  width: 2rem;
   border: none;
   display: flex;
 }
 h1 {
-  padding-left: 35px;
-  padding-bottom: 35px;
+  padding-left: 0.35rem;
+  padding-bottom: 0.35rem;
   color: #000;
-  font-size: 24px;
+  font-size: 0.24rem;
   position: absolute;
-  height: 80px;
-  width: 375px；;
+  height: 0.8rem;
+  width: 3.75rem；;
 }
 span {
-  font-size: 16px;
+  font-size: 0.16rem;
 }
 form {
-  height: 200px;
-  width: 300px;
+  height: 2rem;
+  width: 3rem;
   position: absolute;
-  top: 100px;
-  left: 30px;
+  top: 1rem;
+  left: 0.3rem;
 }
 .text {
   border: 1px solid black;
-  height: 60px;
-  width: 300px;
-  margin-bottom: 15px;
+  height: 0.6rem;
+  width: 3rem;
+  margin-bottom: 0.15rem;
   display: flex;
 }
 .zuo {
-  margin: 20px;
-  font-size: 30px;
+  margin: 0.2rem;
+  font-size: 0.3rem;
   color: white;
-  margin-bottom: 15px;
-  height: 60px;
-  width: 300px;
+  margin-bottom: 0.15rem;
+  height: 0.6rem;
+  width: 3rem;
   margin: 0 auto;
   text-align: center;
   background: #ccc;
-  padding-left: 130px;
-  line-height: 60px;
+  padding-left: 1.3rem;
+  line-height: 0.6rem;
 }
 .qie a {
   display: inline-block;
   color: #666;
-  font-size: 12px;
+  font-size: 0.12rem;
   position: absolute;
-  right: 235px;
-  top: 320px;
-  width: 100px;
+  right: 2.35rem;
+  top: 3.2rem;
+  width: 1rem;
 }
 </style>

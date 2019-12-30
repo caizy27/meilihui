@@ -46,12 +46,16 @@ export default {
    img{
        height: 0.6rem;
        width: 0.6rem;
+       margin-left: 0.04rem;
 
    }
    .time{
        font-size: 0.1rem;
        display: inline-block;
        margin-top: 0.1rem;
+   }
+   h3{
+     margin-left: 0.07rem;
    }
 
    p{
@@ -60,7 +64,7 @@ export default {
        margin-left: 0.08rem;
        margin-top: 0.1rem;
        font-size: 0.1rem;
-
+        width: 0.6rem;
    }
 
 }

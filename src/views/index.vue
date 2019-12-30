@@ -39,9 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .swiper-slide {
-  margin-top: 0.19rem;
+  margin-top: -0.6rem;
     img {
     width: 100%;
     height: 100%;

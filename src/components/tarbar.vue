@@ -1,16 +1,14 @@
 <template>
-<div class="all" >
+<div class="all" ref="qq">
 
 <div class="demo-input-suffix" >
-  <a @click="pagesClick"><span>登录</span></a>
-  <el-input
-    placeholder=""
-    prefix-icon="el-icon-search"
-    v-model="input2"
-    type='text'
-    @input="inputClick()"
->
-</el-input>
+  <a @click="pagesClick">登录</a>
+  <input type="text" class="top"
+  @input="inputClick()"
+  @click="inputClick"
+  v-model="input2"
+  >
+
 <i class="iconfont icon-gouwuche" @click="carhandClick"></i>
   <div class="input">
     <ul class="search">
@@ -21,7 +19,7 @@
     </ul>
     </div>
 </div>
-<ul v-if=datalist.length>
+<ul ref="ww">
   <li @click="handindexClick">推荐</li>
   <li v-for="(data,index) in datalist" :key="data.categoryId" @click="handClick(data.categoryId,index)">
     {{data.name}}
@@ -58,18 +56,11 @@ export default {
       this.$router.push(`/index`)
     },
     carhandClick () {
-      this.$router.push(`/egister`)
+      this.$router.push(`egister`)
     },
 
     inputClick () {
-      axios({
-        url: 'http://www.mei.com/appapi/search/searchSuggest/v3?text=Z',
-        method: 'get'
-      }).then(res => {
-        // console.log(res.data)
-        this.inputlist = res.data.result.map(item => item.name).filter(item => item.includes(this.input2))
-        // console.log(this.inputlist)
-      })
+      this.$router.push(`/soli/search`)
     }
     // handleScroll () {
     //   if (this.$refs.tarbar.clientHeight >= document.documentElement.scrollTop) {
@@ -94,36 +85,47 @@ export default {
 
 </script>
 <style lang="scss" scoped>
- input.el-input__inner{
-      background: transparent;
-      width: 3rem;
-
-  }
   .demo-input-suffix {
+    height: .4rem;
+    display: flex;
+    color: white;
     a{
       display: block;
-      width: 0.5rem;
-          }
-    display: flex;
-   .el-input__inner{
-    background: transparent;
+      width: 15%;
+      font-size: .16rem;
+      text-align: center;
+      line-height: .4rem;
+      color: white;
+    }
 
-      flex: 1;
-    }span{
+    .top{
+      width: 3rem;
+      margin-top:.05rem ;
+      margin-bottom:.05rem ;
+      height: 0.3rem;
+      border: none;
+      padding-left:.1rem ;
+      background: white;
+      opacity: .4;
+    }
+    span{
       flex: 1;
       display: inline-block;
       width: 1rem;
       margin-top: 0.1rem;
       margin-left:0.2rem;
-    }i{
-      width: 1rem;
-      font-size: 0.3rem;
-      margin-left: 0.25rem;
+    }
+    .iconfont {
+      width: 15%;
+      font-size: 0.25rem;
+      text-align: center;
+      line-height: .4rem;
     }
   }
-
+  .swiper-slide{
+    margin-top: 0.2rem;
+  }
   .all{
-    background: #7e593c;
 
     height: 0.6rem;
     // width: 100%;
@@ -132,15 +134,20 @@ export default {
   ul{
     display: flex;
     list-style: none;
-    background: #7e593c;
+    background: transparent;
+    z-index: 999999;
+    position: fixed;
+    width: 3.75rem;
     li{
       flex: 1;
+      font-size: 0.12rem;
       color: #fff;
       height: 0.4rem;
       text-align: center;
       line-height: 0.4rem;
     }
   }
+
   // .fixed{
   //   position: fixed;
   //   top:0px;

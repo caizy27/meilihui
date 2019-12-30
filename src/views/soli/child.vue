@@ -81,7 +81,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 img {
-  width: 100%;
+  width: 96%;
+  margin-left: 0.1rem;
+  margin-bottom: 0.02rem;
+  margin-top: 0.1rem;
 }
 .one {
   font-size: 0.15rem;
@@ -91,6 +94,9 @@ img {
     position: absolute;
     bottom: 0.1rem;
     left: 0.1rem;
+    margin-left: 0.1rem;
+    margin-bottom: 0.1rem;
+
     div {
       color: #fff;
     }

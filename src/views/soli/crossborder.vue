@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .all{
   position: relative;
-  margin-top: 0.2rem;
+
 }
 img {
   width: 100%;
